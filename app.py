@@ -12,7 +12,7 @@ def convert_video(URL):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=[ 'GET'])
 def default_function():
     return jsonify({"message": "This is the Default Route for Youtube to Mp3 Site"})
 
