@@ -15,7 +15,7 @@ def default_function():
         app.logger.error(f"Error in default_function: {str(e)}")
         raise
 @app.route('/download/<url>')
-def default_function(url):
+def download_function(url):
     try:
         return f"This is the recieved url : {url}"
     except Exception as e:
