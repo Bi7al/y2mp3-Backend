@@ -6,6 +6,9 @@ app = Flask(__name__)
 @app.route('/<URL>', methods=['POST'])
 def convert_video(URL):
     return f"URL of the video is : {URL}"
+@app.route('/', methods=['POST','GET'])
+def convert_video():
+    return "This is the Default Route for Youtube to Mp3 Site"
 
 
 
