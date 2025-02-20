@@ -27,7 +27,7 @@ def download_function(url):
 
 
         # Download video
-        yt = YouTube(decoded_url,'WEB')
+        yt = YouTube(decoded_url, use_oauth=True)
         video_stream = yt.streams.filter(only_audio=True).first()
 
         # Use /tmp directory for temporary storage
