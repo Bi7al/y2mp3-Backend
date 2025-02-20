@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+from urllib.parse import unquote
 app = Flask(__name__)
 
 
@@ -15,10 +16,11 @@ def default_function():
     except Exception as e:
         app.logger.error(f"Error in default_function: {str(e)}")
         raise
-@app.route('/download/<url>')
+@app.route('/download/<path:url>')
 def download_function(url):
+    decoded_url = unquote(url)
     try:
-        return jsonify({"recievedUrl":url});
+        return jsonify({"recievedUrl":decoded_url});
     except Exception as e:
         app.logger.error(f"Error in default_function: {str(e)}")
         raise
