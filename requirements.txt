@@ -1,5 +1,5 @@
 Flask==2.3.2
 flask-cors
 moviepy==1.0.3
-pytubefix
+pytubefix==8.12.1
 nodejs
