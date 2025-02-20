@@ -16,7 +16,7 @@ def default_function():
     except Exception as e:
         app.logger.error(f"Error in default_function: {str(e)}")
         raise
-@app.route('/download/<path:url>')
+@app.route('/download/<path:url>',methods=['POST'])
 def download_function(url):
     decoded_url = unquote(url)
     try:
