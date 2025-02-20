@@ -1,7 +1,7 @@
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
 import os
-from pytube import YouTube
+from pytubefix import YouTube
 from moviepy.editor import AudioFileClip
 from urllib.parse import unquote
 app = Flask(__name__)
@@ -27,7 +27,7 @@ def download_function(url):
 
 
         # Download video
-        yt = YouTube(decoded_url)
+        yt = YouTube(decoded_url,'WEB')
         video_stream = yt.streams.filter(only_audio=True).first()
 
         # Use /tmp directory for temporary storage
