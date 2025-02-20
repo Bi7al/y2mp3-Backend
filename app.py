@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 
-CORS(app)
+CORS(app,resources={r"/*": {"origins": ["http://127.0.0.1:5500", "https://y2mp3-front-end.vercel.app"]}})
 
 @app.route('/')
 def default_function():
